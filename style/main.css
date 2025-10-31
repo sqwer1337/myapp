@@ -1,0 +1,209 @@
+body {
+    background: #120f10;
+    color: #ffffff;
+    margin: 0;
+    font-family: "Rubik Wet Paint", system-ui;
+}
+
+.noise-bg svg {
+    pointer-events: none;
+    position: fixed;
+    z-index: 1;
+    height: 100vh;
+    opacity: 0.7;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+header .svg {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+}
+
+.welcome {
+    padding: 30px 30px 10px 30px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    height: calc(100vh - 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome::before {
+    content: ""; /* Обязательное свойство */
+    position: absolute;
+    background: radial-gradient(circle at 30% 30%, #ff4301 0%, transparent 70%), 
+                radial-gradient(circle at 70% 70%, #9d00ff 0%, transparent 70%);
+    opacity: 0.15;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: -1; /* Чтобы градиент был под контентом */
+}
+
+.welcome img {
+    width: 220px;
+    filter: drop-shadow(0px 0px 10px rgba(255, 67, 1, 1));
+    animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        filter: drop-shadow(0px 0px 4px rgba(255, 67, 1, 1));
+    }
+    50% {
+        filter: drop-shadow(0px 0px 10px rgba(255, 67, 1, 0.8)) 
+                drop-shadow(0px 0px 25px rgba(255, 125, 1, 0.6));
+    }
+}
+
+.welcome span {
+    font-size: 40px;
+    color: #ff4301;
+    font-weight: 100;
+    text-align: center;
+    animation: floatSwing 4s ease-in-out infinite;
+    transform-origin: center;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+@keyframes floatSwing {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-15px) rotate(-3deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(3deg);
+    }
+    75% {
+        transform: translateY(-12px) rotate(-2deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+.text-container {
+    max-width: 800px;
+    text-align: center;
+}
+
+.typing-text {
+    font-size: 24px;
+    color: #ffff;
+    line-height: 1.6;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Underdog", system-ui;
+}
+
+.cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: #ff4301;
+    margin-left: 2px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.welcome p {
+    font-family: "Underdog", system-ui;
+    font-size: 14px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    bottom: 20px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    padding: 10px;;
+    z-index: 2 !important;
+}
+
+footer img {
+    opacity: 0.7;
+    max-width: 150px
+}
+
+.play-audio {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2 !important;
+    padding: 10px;
+    background-color: #ff4301;
+    border-radius: 50%;
+    z-index: 100 !important;
+    margin: 25px;
+}
+
+.center-main {
+    font-family: "Underdog", system-ui;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.4;
+    padding: 20px;
+}
+
+.butt-history {
+    padding: 15px 15px;
+    background-color: #ff4301;
+    max-width: max-content;
+    border-radius: 30px;
+    font-family: "Underdog", system-ui;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.footer-bla {
+    position: relative;
+    height: max-content;
+}
+
+.footer-bla svg {
+    position: relative;
+    width: 100%;
+}
