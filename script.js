@@ -116,7 +116,7 @@ const memories = [
     {
         type: 'image',
         url: './assets/8.jpg',
-        text: 'Счпстлив за тебя, что у тебя есть такая лучшая подруга'
+        text: 'Счастлив за тебя, что у тебя есть такая лучшая подруга'
     },
     {
         type: 'image',
@@ -400,4 +400,5 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
 });
